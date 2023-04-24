@@ -14,11 +14,11 @@ async def on_startup(dp):
     middlewares.setup(dp)
 
     scheduler_today = AsyncIOScheduler(timezone="Asia/Yekaterinburg")
-    scheduler_today.add_job(timetable_today_cron, trigger='cron', hour=10, minute=31,
+    scheduler_today.add_job(timetable_today_cron, trigger='cron', hour=7, minute=0,
                             start_date=datetime.datetime.now(), kwargs={'bot': bot})
 
     scheduler_next = AsyncIOScheduler(timezone="Asia/Yekaterinburg")
-    scheduler_next.add_job(timetable_next, trigger='cron', hour=10, minute=30,
+    scheduler_next.add_job(timetable_next, trigger='cron', hour=19, minute=0,
                            start_date=datetime.datetime.now(), kwargs={'bot': bot})
 
     scheduler_today.start()
