@@ -10,4 +10,4 @@ async def bot_start(message: types.Message):
     # start_buttons = ["Расписание на неделю", "Расписание на сегодня", "Расписание на след. учебн. день"]
     # keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     # keyboard.add(*start_buttons)
-    await message.answer(f'Привет, {message.from_user.full_name}!\nid чата: {message.chat.id}')  #, reply_markup=keyboard)
+    await message.answer(f'Привет, {message.from_user.full_name}!')#\nid чата: {message.chat.id}')  , reply_markup=keyboard)
