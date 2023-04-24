@@ -1,13 +1,13 @@
 from aiogram.dispatcher.filters import Command
 from aiogram import types
 
-from filters.AdminMessage import AdminMessage
+from filters.IsPrivate import IsPrivate
 from loader import dp
 import datetime
 import requests
 
 
-@dp.message_handler(Command("weather"), AdminMessage())
+@dp.message_handler(Command("weather"), IsPrivate())
 async def get_weather(message: types.Message):
     code_to_emoji = {
         "Clear": "Ясно \U00002600",
