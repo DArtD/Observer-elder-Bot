@@ -1,7 +1,7 @@
 import datetime
 import json
 from aiogram import Bot
-from data.config import admin
+from data.config import group_chat
 from utils.Upper_Lower_week import UpperLowerweek
 
 
@@ -19,6 +19,6 @@ async def timetable_next(bot: Bot):
         for i in obj[str(dt_day)]:
             timetable += '\n' + obj[str(dt_day)][i] + '\n'
 
-        return await bot.send_message(chat_id=admin, text="<b><u>Расписание на завтра</u></b>"),\
-               await bot.send_message(chat_id=admin, text=await UpperLowerweek(), disable_notification=True), \
-               await bot.send_message(chat_id=admin, text=timetable, disable_notification=True)
+        return await bot.send_message(chat_id=group_chat, text="<b><u>Расписание на завтра</u></b>"),\
+               await bot.send_message(chat_id=group_chat, text=await UpperLowerweek(), disable_notification=True), \
+               await bot.send_message(chat_id=group_chat, text=timetable, disable_notification=True)
